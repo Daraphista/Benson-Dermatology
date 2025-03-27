@@ -1,4 +1,5 @@
 import VideoPlayer from "./components/VideoPlayer";
+import Services from "./components/Services";
 import {
   Disclosure,
   DisclosureButton,
@@ -53,11 +54,7 @@ export default function Home() {
             <div className="bg-gray-500 aspect-square"></div>
             <div>
               <h2 className="text-2xl font-bold">Our Dermatology Services</h2>
-              <ul>
-                {services.map((service) => (
-                  <li key={service}>{service}</li>
-                ))}
-              </ul>
+              <Services />
             </div>
           </div>
         </div>
