@@ -1,5 +1,54 @@
 @import "tailwindcss";
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .button {
+    @apply cursor-pointer bg-primary uppercase text-white py-3 px-6 rounded-full w-fit block font-bold transition-colors duration-300;
+  }
+
+  .button.is-white {
+    @apply bg-white text-primary hover:bg-primary hover:text-light;
+  }
+
+  .button.is-outline {
+    @apply border bg-transparent border-primary text-dark hover:bg-primary hover:text-light;
+  }
+
+  .button.is-dark {
+    @apply bg-dark text-light hover:bg-white hover:text-dark;
+  }
+
+  .text-h1 {
+    @apply font-bold text-4xl lg:text-5xl;
+  }
+  .text-h2 {
+    @apply font-bold text-3xl lg:text-4xl;
+  }
+  .text-h3 {
+    @apply font-bold text-2xl lg:text-3xl;
+  }
+  .text-h4 {
+    @apply font-bold text-xl lg:text-2xl;
+  }
+  .text-h5 {
+    @apply font-bold text-lg lg:text-xl;
+  }
+  .text-h6 {
+    @apply font-bold text-base lg:text-lg;
+  }
+
+  .px-gutter {
+    @apply px-6 md:px-10 lg:px-16;
+  }
+  .py-section-default {
+    @apply py-8 lg:py-16;
+  }
+  .max-w-container-default {
+    @apply max-w-screen-lg;
+  }
+}
+
+@theme {
+  --color-dark: #48392f;
+  --color-primary: #ff6b00;
+  --color-light: #f8f6f2;
 }
