@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   Disclosure,
   DisclosureButton,
@@ -11,7 +12,9 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import logo from "@/public/logo.avif";
 
 const navigation = [
   {
@@ -97,14 +100,33 @@ function MobileNavItem({ item }) {
 }
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
+
   return (
     <header className="text-dark">
       {/* Nav */}
       <nav className="px-gutter">
         <div className="max-w-container-default mx-auto px-4">
           <div className="flex justify-between items-center py-8">
-            <Link href="/" className="text-2xl font-bold">
-              Ben Sonderman MD
+            <Link href="/">
+              <Image
+                className="w-auto h-12 md:h-14 lg:h-16"
+                width={230}
+                height={63}
+                src={logo}
+                alt="Ben Sonderman MD"
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -160,65 +182,50 @@ export default function Navbar() {
 
             {/* Mobile menu button */}
             <div className="lg:hidden">
-              <Disclosure as="div" className="relative">
-                {({ open }) => {
-                  useEffect(() => {
-                    if (open) {
-                      document.body.style.overflow = "hidden";
-                    } else {
-                      document.body.style.overflow = "unset";
-                    }
-                    return () => {
-                      document.body.style.overflow = "unset";
-                    };
-                  }, [open]);
+              <Disclosure
+                as="div"
+                className="relative"
+                onChange={setIsMenuOpen}
+              >
+                {({ open }) => (
+                  <>
+                    <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+                      <span className="sr-only">Open main menu</span>
+                      <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                    </DisclosureButton>
 
-                  return (
-                    <>
-                      <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
-                        <span className="sr-only">Open main menu</span>
-                        <Bars3Icon
-                          className="block h-6 w-6"
-                          aria-hidden="true"
-                        />
-                      </DisclosureButton>
+                    <DisclosurePanel className="fixed inset-0 top-[68px] z-50 bg-white">
+                      <div className="flex flex-col h-full px-gutter">
+                        {/* Header with close button */}
+                        <div className="flex items-center justify-between px-4 py-8">
+                          <Link href="/" className="text-2xl font-bold">
+                            Ben Sonderman MD
+                          </Link>
+                          <DisclosureButton className="rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+                            <span className="sr-only">Close menu</span>
+                            <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                          </DisclosureButton>
+                        </div>
 
-                      <DisclosurePanel className="fixed inset-0 top-[68px] z-50 bg-white">
-                        <div className="flex flex-col h-full px-gutter">
-                          {/* Header with close button */}
-                          <div className="flex items-center justify-between px-4 py-8">
-                            <Link href="/" className="text-2xl font-bold">
-                              Ben Sonderman MD
+                        {/* Menu content */}
+                        <div className="flex-1 overflow-y-auto">
+                          {navigation.map((item, index) => (
+                            <MobileNavItem key={index} item={item} />
+                          ))}
+
+                          <div className="p-4 mb-10">
+                            <Link
+                              href="/contact"
+                              className="block w-full text-center button is-outline"
+                            >
+                              Contact Us
                             </Link>
-                            <DisclosureButton className="rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
-                              <span className="sr-only">Close menu</span>
-                              <XMarkIcon
-                                className="h-6 w-6"
-                                aria-hidden="true"
-                              />
-                            </DisclosureButton>
-                          </div>
-
-                          {/* Menu content */}
-                          <div className="flex-1 overflow-y-auto">
-                            {navigation.map((item, index) => (
-                              <MobileNavItem key={index} item={item} />
-                            ))}
-
-                            <div className="p-4 mb-10">
-                              <Link
-                                href="/contact"
-                                className="block w-full text-center button is-outline"
-                              >
-                                Contact Us
-                              </Link>
-                            </div>
                           </div>
                         </div>
-                      </DisclosurePanel>
-                    </>
-                  );
-                }}
+                      </div>
+                    </DisclosurePanel>
+                  </>
+                )}
               </Disclosure>
             </div>
           </div>

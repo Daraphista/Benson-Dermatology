@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { PlayIcon } from "@heroicons/react/24/solid";
 
+import videoThumb from "@/public/video-thumb.avif";
+import Image from "next/image";
+
 export default function VideoPlayer() {
   const [showVideo, setShowVideo] = useState(false);
 
@@ -14,11 +17,11 @@ export default function VideoPlayer() {
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          src="https://www.youtube-nocookie.com/embed/otD2gzs-c-E?autoplay=1&rel=0"
+          src={videoThumb}
         />
       ) : (
         <>
-          <img
+          <Image
             src="https://cdn.eversite.com/media/bensonderm.com/1233/video-thumb.jpg"
             alt="Benson Dermatology Video"
             className="rounded-xl object-cover w-full h-full"

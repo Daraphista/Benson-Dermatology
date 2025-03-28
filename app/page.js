@@ -347,7 +347,7 @@ export default function Home() {
         </div>
         <Image
           src={map}
-          className="flex-1 w-full max-h-64 lg:w-1/2 lg:h-full object-cover"
+          className="flex-1 w-full max-h-64 lg:w-1/2 md:aspect-square md:max-h-full object-cover"
           alt=""
           unoptimized
         />
