@@ -313,8 +313,8 @@ export default function Home() {
       </section>
 
       <section className="flex flex-col md:flex-row bg-light">
-        <div className="w-full px-gutter md:pl-gutter py-section-default">
-          <div className="mx-auto max-w-section-default md:ml-auto md:max-w-lg pr-16">
+        <div className="w-full px-gutter md:pr-0 py-section-default">
+          <div className="mx-auto w-full max-w-section-default md:ml-auto md:mr-0 md:max-w-lg pr-16">
             <h2 className="text-h2 font-bold mb-8">Our Locations</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
               {locations.map((location, index) => (
