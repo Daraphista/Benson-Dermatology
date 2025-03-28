@@ -195,7 +195,7 @@ export default function Home() {
               unoptimized
               alt=""
             />
-            <div>
+            <div className="md:mt-16">
               <h2 className="text-h2 font-bold mb-16">Testimonials</h2>
 
               <p className="text-4xl italic max-w-prose mb-8">
@@ -425,4 +425,3 @@ const locations = [
     phone: "(225) 998-0500",
   },
 ];
-
