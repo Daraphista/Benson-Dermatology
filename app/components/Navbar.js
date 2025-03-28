@@ -47,9 +47,9 @@ const navigation = [
 
 export default function Navbar() {
   return (
-    <div>
+    <header className="text-dark">
       {/* Banner */}
-      <div className="flex justify-center items-center gap-4 py-4">
+      <div className="flex justify-center items-center gap-4 py-4 flex-wrap">
         <Link
           className="py-1 px-2 text-lg font-bold uppercase hover:text-[#68564b] transition-colors duration-300"
           href="https://bensonderm.com/"
@@ -130,6 +130,6 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-    </div>
+    </header>
   );
 }

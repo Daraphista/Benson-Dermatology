@@ -15,7 +15,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#f9f5f0]">
       <Navbar />
 
-      <section className="px-gutter py-section-default">
+      <section className="px-gutter py-section-default bg-gradient-to-b from-white to-[#f9f5f0]">
         <div className="max-w-container-default mx-auto">
           <div className="flex flex-col items-center text-center justify-center gap-8">
             <h1 className="text-4xl font-bold max-w-prose">
