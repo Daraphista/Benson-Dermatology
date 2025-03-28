@@ -17,15 +17,16 @@ export default function VideoPlayer() {
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          src={videoThumb}
+          src="https://www.youtube-nocookie.com/embed/otD2gzs-c-E?autoplay=1&rel=0"
         />
       ) : (
         <>
           <Image
-            src="https://cdn.eversite.com/media/bensonderm.com/1233/video-thumb.jpg"
+            src={videoThumb}
             alt="Benson Dermatology Video"
             className="rounded-xl object-cover w-full h-full"
             loading="lazy"
+            unoptimized
           />
           <button
             type="button"

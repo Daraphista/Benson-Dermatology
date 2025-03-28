@@ -54,7 +54,7 @@ export default function Home() {
           QnA Cosmetic Surgery & Medical Spa
         </Link>
         <Link
-          className="py-1 px-2 text-lg font-bold uppercase text-primary hover:text-[#68564b] transition-colors duration-300"
+          className="py-1 px-2 text-lg font-bold uppercase hover:text-[#68564b] transition-colors duration-300"
           href="https://qnaspa.com/specials"
         >
           QnA Specials
