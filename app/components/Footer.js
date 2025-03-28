@@ -9,11 +9,11 @@ export default function Footer() {
   return (
     <footer className="">
       <div className="px-gutter py-section-default">
-        <div className="max-w-container-default mx-auto flex justify-between">
-          <Link href="/">
+        <div className="max-w-container-default mx-auto flex items-center gap-4 justify-between flex-wrap">
+          <Link className="w-40 lg:w-auto" href="/">
             <Image src={logo} width={263} height={72} alt="Benson Derm" />
           </Link>
-          <Link href="/">
+          <Link className="w-40 lg:w-auto" href="/">
             <Image
               src={qnaCosmeticSurgeryLogo}
               width={183}
@@ -21,7 +21,7 @@ export default function Footer() {
               alt="QNA Cosmetic Surgery"
             />
           </Link>
-          <Link href="/">
+          <Link className="w-40 lg:w-auto" href="/">
             <Image
               src={qnaMedicalSpaLogo}
               width={183}

@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Banner */}
-      <div className="flex justify-center items-center gap-4 py-4 flex-wrap bg-light">
+      <div className="flex justify-center items-center gap-x-1 lg:gap-4 gap-y-0 py-4 flex-wrap bg-light">
         <Link
           className="py-1 px-2 text-lg font-bold uppercase hover:text-[#68564b] transition-colors duration-300"
           href="https://bensonderm.com/"
@@ -188,7 +188,7 @@ export default function Home() {
 
       <section className="px-gutter py-section-default bg-light">
         <div className="max-w-container-default mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20">
             <Image
               src={testimonialImage}
               className="w-full rounded-2xl object-cover aspect-3/4 lg:-mb-22"
@@ -265,7 +265,7 @@ export default function Home() {
           <div className="flex flex-col items-center text-center justify-center gap-8">
             <h2 className="text-h2 max-w-prose">Dermatologists & Providers</h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-20 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-20 w-full">
               <div className="border-t border-primary py-4 flex gap-7">
                 <Image
                   alt=""
@@ -313,8 +313,8 @@ export default function Home() {
       </section>
 
       <section className="flex flex-col md:flex-row bg-light">
-        <div className="w-full pl-gutter py-section-default">
-          <div className="ml-auto max-w-lg pr-16">
+        <div className="w-full px-gutter md:pl-gutter py-section-default">
+          <div className="mx-auto max-w-section-default md:ml-auto md:max-w-lg pr-16">
             <h2 className="text-h2 font-bold mb-8">Our Locations</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
               {locations.map((location, index) => (
