@@ -77,50 +77,52 @@ function classNames(...classes) {
 
 export default function Services() {
   return (
-    <div>
-      <h2 className="text-2xl font-bold mb-8">Our Services</h2>
-      <div className="space-y-4">
-        {services.map((service, index) => (
-          <Disclosure key={service.title}>
-            {({ open }) => (
-              <div className="bg-white rounded-lg shadow">
-                <DisclosureButton className="flex w-full justify-between rounded-lg px-4 py-3 text-left text-lg font-medium hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-brand-1 focus-visible:ring-opacity-75">
-                  <span>{service.title}</span>
-                  <ChevronDownIcon
-                    className={classNames(
-                      open ? "rotate-180 transform" : "",
-                      "h-5 w-5 text-brand-1 transition-transform duration-200"
-                    )}
-                    aria-hidden="true"
-                  />
-                </DisclosureButton>
-                <DisclosurePanel className="px-4 pb-4">
-                  <p className="text-gray-600 mb-4">{service.description}</p>
-                  <Link
-                    href={service.link}
-                    className="inline-flex items-center text-brand-1 hover:text-brand-2 font-medium"
-                  >
-                    Learn more about {service.title.toLowerCase()}
-                    <svg
-                      className="w-4 h-4 ml-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+    <section className="px-gutter py-section-default">
+      <div className="max-w-container-default mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
+        <div className="space-y-4">
+          {services.map((service, index) => (
+            <Disclosure key={service.title}>
+              {({ open }) => (
+                <div className="bg-white rounded-lg shadow">
+                  <DisclosureButton className="flex w-full justify-between rounded-lg px-4 py-3 text-left text-lg font-medium hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-brand-1 focus-visible:ring-opacity-75">
+                    <span>{service.title}</span>
+                    <ChevronDownIcon
+                      className={classNames(
+                        open ? "rotate-180 transform" : "",
+                        "h-5 w-5 text-brand-1 transition-transform duration-200"
+                      )}
+                      aria-hidden="true"
+                    />
+                  </DisclosureButton>
+                  <DisclosurePanel className="px-4 pb-4">
+                    <p className="text-gray-600 mb-4">{service.description}</p>
+                    <Link
+                      href={service.link}
+                      className="inline-flex items-center text-brand-1 hover:text-brand-2 font-medium"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </Link>
-                </DisclosurePanel>
-              </div>
-            )}
-          </Disclosure>
-        ))}
+                      Learn more about {service.title.toLowerCase()}
+                      <svg
+                        className="w-4 h-4 ml-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </Link>
+                  </DisclosurePanel>
+                </div>
+              )}
+            </Disclosure>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

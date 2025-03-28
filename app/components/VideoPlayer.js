@@ -7,10 +7,10 @@ export default function VideoPlayer() {
   const [showVideo, setShowVideo] = useState(false);
 
   return (
-    <div className="relative w-full aspect-video">
+    <div className="relative w-full aspect-video bg-black rounded-xl overflow-hidden">
       {showVideo ? (
         <iframe
-          className="w-full aspect-video rounded-xl"
+          className="w-full aspect-video"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

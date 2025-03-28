@@ -13,6 +13,10 @@
     @apply border bg-transparent border-primary text-dark hover:bg-primary hover:text-light;
   }
 
+  .button.is-dark-outline {
+    @apply border bg-transparent border-dark text-dark hover:bg-dark hover:text-light;
+  }
+
   .button.is-dark {
     @apply bg-dark text-light hover:bg-white hover:text-dark;
   }
@@ -39,6 +43,11 @@
   .px-gutter {
     @apply px-6 md:px-10 lg:px-16;
   }
+
+  .pl-gutter {
+    @apply pl-6 md:pl-10 lg:pl-16;
+  }
+
   .py-section-default {
     @apply py-8 lg:py-16;
   }
