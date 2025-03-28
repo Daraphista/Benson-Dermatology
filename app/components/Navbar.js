@@ -1,10 +1,18 @@
+"use client";
+
 import Link from "next/link";
 import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import {
+  ChevronDownIcon,
+  Bars3Icon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+import { useEffect } from "react";
+
 const navigation = [
   {
     name: "Our Clinics",
@@ -45,6 +53,49 @@ const navigation = [
   },
 ];
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
+function MobileNavItem({ item }) {
+  if (item.items) {
+    return (
+      <Disclosure as="div" className="relative text-lg text-center">
+        <DisclosureButton className="flex w-full items-center justify-center px-4 py-4  font-medium text-gray-700 hover:bg-gray-50 gap-2">
+          <div className="relative">
+            <span className="capitalize">{item.name}</span>
+            <ChevronDownIcon
+              className={classNames(
+                "absolute -right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 transition-transform duration-200"
+              )}
+            />
+          </div>
+        </DisclosureButton>
+        <DisclosurePanel transition className="px-4 py-2 text-gray-500">
+          {item.items.map((subItem, subIndex) => (
+            <Link
+              key={subIndex}
+              href={subItem.href}
+              className="block w-full text-center py-4 hover:text-primary"
+            >
+              {subItem.name}
+            </Link>
+          ))}
+        </DisclosurePanel>
+      </Disclosure>
+    );
+  }
+
+  return (
+    <Link
+      href={item.href}
+      className="block px-4 py-4 text-lg text-center font-medium text-gray-700 hover:bg-gray-50 hover:text-primary capitalize"
+    >
+      {item.name}
+    </Link>
+  );
+}
+
 export default function Navbar() {
   return (
     <header className="text-dark">
@@ -78,7 +129,8 @@ export default function Navbar() {
               Ben Sonderman MD
             </Link>
 
-            <div className="flex gap-4 items-center">
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex gap-4 items-center">
               {navigation.map((item, index) => {
                 if (item.items) {
                   return (
@@ -126,6 +178,70 @@ export default function Navbar() {
               <Link href="/contact" className="button is-outline">
                 Contact Us
               </Link>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="lg:hidden">
+              <Disclosure as="div" className="relative">
+                {({ open }) => {
+                  useEffect(() => {
+                    if (open) {
+                      document.body.style.overflow = "hidden";
+                    } else {
+                      document.body.style.overflow = "unset";
+                    }
+                    return () => {
+                      document.body.style.overflow = "unset";
+                    };
+                  }, [open]);
+
+                  return (
+                    <>
+                      <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+                        <span className="sr-only">Open main menu</span>
+                        <Bars3Icon
+                          className="block h-6 w-6"
+                          aria-hidden="true"
+                        />
+                      </DisclosureButton>
+
+                      <DisclosurePanel className="fixed inset-0 top-[68px] z-50 bg-white">
+                        <div className="flex flex-col h-full px-gutter">
+                          {/* Header with close button */}
+                          <div className="flex items-center justify-between px-4 py-8">
+                            <Link href="/" className="text-2xl font-bold">
+                              Ben Sonderman MD
+                            </Link>
+                            <DisclosureButton className="rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+                              <span className="sr-only">Close menu</span>
+                              <XMarkIcon
+                                className="h-6 w-6"
+                                aria-hidden="true"
+                              />
+                            </DisclosureButton>
+                          </div>
+
+                          {/* Menu content */}
+                          <div className="flex-1 overflow-y-auto">
+                            {navigation.map((item, index) => (
+                              <MobileNavItem key={index} item={item} />
+                            ))}
+
+                            <div className="p-4 mb-10">
+                              <Link
+                                href="/contact"
+                                className="block w-full text-center button is-outline"
+                              >
+                                Contact Us
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </DisclosurePanel>
+                    </>
+                  );
+                }}
+              </Disclosure>
             </div>
           </div>
         </div>
