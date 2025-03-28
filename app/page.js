@@ -1,6 +1,30 @@
 import VideoPlayer from "./components/VideoPlayer";
-import Services from "./components/Services";
 import Navbar from "./components/Navbar";
+import Image from "next/image";
+import Footer from "./components/Footer";
+
+import servicesImage from "@/public/services.avif";
+
+import badge1 from "@/public/badge-1.avif";
+import badge2 from "@/public/badge-2.avif";
+import badge3 from "@/public/badge-3.avif";
+import badge4 from "@/public/badge-4.avif";
+import badge5 from "@/public/badge-5.avif";
+import badge6 from "@/public/badge-6.avif";
+import badge7 from "@/public/badge-7.avif";
+import badge8 from "@/public/badge-8.avif";
+import badge9 from "@/public/badge-9.avif";
+
+import testimonialImage from "@/public/testimonial.avif";
+
+import aboutImage from "@/public/about.avif";
+import aboutBadge from "@/public/about-badge.avif";
+
+import drNickFrank from "@/public/dr-nick-frank.avif";
+import drAprilSanchez from "@/public/dr-april-sanchez.avif";
+import drFalonBrown from "@/public/dr-falon-brown.avif";
+import drJessicaWilson from "@/public/dr-jessica-wilson.avif";
+
 import {
   Disclosure,
   DisclosureButton,
@@ -12,50 +36,103 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f9f5f0]">
-      <Navbar />
+    <main className="min-h-screen">
+      {/* Banner */}
+      <div className="flex justify-center items-center gap-4 py-4 flex-wrap bg-light">
+        <Link
+          className="py-1 px-2 text-lg font-bold uppercase hover:text-[#68564b] transition-colors duration-300"
+          href="https://bensonderm.com/"
+        >
+          Benson derm
+        </Link>
+        <Link
+          className="py-1 px-2 text-lg font-bold uppercase hover:text-[#68564b] transition-colors duration-300"
+          href="https://qnaspa.com/"
+        >
+          QnA Cosmetic Surgery & Medical Spa
+        </Link>
+        <Link
+          className="py-1 px-2 text-lg font-bold uppercase text-primary hover:text-[#68564b] transition-colors duration-300"
+          href="https://qnaspa.com/specials"
+        >
+          QnA Specials
+        </Link>
+      </div>
 
-      <section className="px-gutter py-section-default bg-gradient-to-b from-white to-[#f9f5f0]">
-        <div className="max-w-container-default mx-auto">
-          <div className="flex flex-col items-center text-center justify-center gap-8">
-            <h1 className="text-4xl font-bold max-w-prose">
-              State-of-the-Art Skin Care & Southern Hospitality
-            </h1>
+      <div className="relative">
+        <div className="absolute inset-x-0 w-full -z-1 h-full md:h-3/4 bg-gradient-to-t from-[#fff2e5] to-white"></div>
 
-            <p className="text-lg font-sans max-w-prose">
-              Benson Dermatology endeavors to provide an environment of caring
-              and warm southern hospitality coupled with the same level of
-              expertise and technology available in major centers such as New
-              York, Houston, and Los Angeles.
-            </p>
+        <Navbar />
 
-            <div className="flex gap-4">
-              <Link className="button" href="https://bensonderm.com/providers">
-                meet our providers
-              </Link>
-              <Link
-                className="button is-outline"
-                href="https://bensonderm.com/appointments"
-              >
-                get an appointment
-              </Link>
+        <section className="px-gutter py-section-default bg-gradient-to-b">
+          <div className="max-w-container-default mx-auto">
+            <div className="flex flex-col items-center text-center justify-center gap-8">
+              <h1 className="text-4xl font-bold max-w-prose">
+                State-of-the-Art Skin Care & Southern Hospitality
+              </h1>
+              <p className="text-lg font-sans max-w-prose">
+                Benson Dermatology endeavors to provide an environment of caring
+                and warm southern hospitality coupled with the same level of
+                expertise and technology available in major centers such as New
+                York, Houston, and Los Angeles.
+              </p>
+              <div className="flex gap-4">
+                <Link
+                  className="button"
+                  href="https://bensonderm.com/providers"
+                >
+                  meet our providers
+                </Link>
+                <Link
+                  className="button is-outline"
+                  href="https://bensonderm.com/appointments"
+                >
+                  get an appointment
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="px-gutter py-section-default">
-        <div className="max-w-container-default mx-auto">
-          <div className="flex flex-col items-center text-center justify-center gap-8">
-            <VideoPlayer />
+        <section className="px-gutter py-section-default">
+          <div className="max-w-container-default mx-auto">
+            <div className="flex flex-col items-center text-center justify-center gap-8">
+              <VideoPlayer />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <section className="px-gutter py-section-default bg-white">
         <div className="max-w-container-default mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-            <div className="bg-gray-500 aspect-square"></div>
+            <div className="relative w-full overflow-hidden f_ccBNl fc_22d94 ">
+              <div
+                className="aspect-w-1 aspect-h-1 overflow-hidden origin-center transform rotate-[30deg]"
+                style={{ clipPath: "ellipse(34% 49% at 50% 50%)" }}
+              >
+                <picture>
+                  <Image
+                    src={servicesImage}
+                    className="object-cover w-full h-full origin-center transform -rotate-[30deg]"
+                    alt=""
+                    unoptimized
+                  />
+                </picture>
+              </div>
+              <svg
+                className="absolute top-0 left-0 w-24 h-24 sm:w-48 sm:h-48 lg:w-72 lg:h-72"
+                viewBox="0 0 156 206"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.8189 5.58147C36.3133 -2.78691 55.7331 0.477231 75.4405 12.5903C95.1421 24.6999 115.096 45.6349 130.623 72.5287C146.15 99.4225 154.303 127.17 154.94 150.287C155.576 173.411 148.693 191.861 134.199 200.229C119.704 208.598 100.285 205.333 80.5772 193.22C60.8756 181.111 40.9221 160.176 25.395 133.282C9.8678 106.388 1.71435 78.6404 1.07795 55.5236C0.441368 32.3999 7.32442 13.9498 21.8189 5.58147Z"
+                  stroke="#FF6B00"
+                  strokeWidth="0.3"
+                ></path>
+              </svg>
+            </div>
             <div>
               <h2 className="text-h2 font-bold mb-6">
                 Our Dermatology Services
@@ -94,23 +171,30 @@ export default function Home() {
         <div className="max-w-container-default mx-auto">
           <div className="flex flex-col items-center text-center justify-center gap-8">
             <h2 className="text-h2 font-bold mb-6">We love our community!</h2>
-            <div className="flex gap-4">
-              <div className="bg-gray-500 h-10 w-10 "></div>
-              <div className="bg-gray-500 h-10 w-10 "></div>
-              <div className="bg-gray-500 h-10 w-10 "></div>
-              <div className="bg-gray-500 h-10 w-10 "></div>
-              <div className="bg-gray-500 h-10 w-10 "></div>
-              <div className="bg-gray-500 h-10 w-10 "></div>
-              <div className="bg-gray-500 h-10 w-10 "></div>
+            <div className="flex flex-wrap gap-2 justify-center">
+              <Image src={badge1} className="h-24 object-contain" alt="" />
+              <Image src={badge2} className="h-24 object-contain" alt="" />
+              <Image src={badge3} className="h-24 object-contain" alt="" />
+              <Image src={badge4} className="h-24 object-contain" alt="" />
+              <Image src={badge5} className="h-24 object-contain" alt="" />
+              <Image src={badge6} className="h-24 object-contain" alt="" />
+              <Image src={badge7} className="h-24 object-contain" alt="" />
+              <Image src={badge8} className="h-24 object-contain" alt="" />
+              <Image src={badge9} className="h-24 object-contain" alt="" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-gutter py-section-default">
+      <section className="px-gutter py-section-default bg-light">
         <div className="max-w-container-default mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-            <div className="bg-gray-500 aspect-square"></div>
+            <Image
+              src={testimonialImage}
+              className="w-full rounded-2xl object-cover aspect-3/4 lg:-mb-22"
+              unoptimized
+              alt=""
+            />
             <div>
               <h2 className="text-h2 font-bold mb-16">Testimonials</h2>
 
@@ -125,7 +209,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-gutter py-section-default bg-[#eddac7]">
+      <section className="px-gutter py-section-default bg-gradient-to-b from-[#EDDAC7]/60 to-[#EDDAC7]">
         <div className="max-w-container-default mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
             <div>
@@ -152,7 +236,26 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="bg-gray-500 aspect-square"></div>
+            <div className="relative w-full overflow-hidden f_ccBNj fc_22d94 ">
+              <div
+                className="aspect-square overflow-hidden origin-center transform rotate-[30deg]"
+                style={{ clipPath: "ellipse(34% 49% at 50% 50%)" }}
+              >
+                <Image
+                  src={aboutImage}
+                  className="object-cover w-full h-full origin-center transform -rotate-[30deg]"
+                  alt=""
+                  unoptimized
+                />
+              </div>
+
+              <Image
+                src={aboutBadge}
+                className="absolute top-0 left-0 aspect-square mix-blend-multiply w-full object-cover max-w-[33%]"
+                alt=""
+                unoptimized
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -164,19 +267,35 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20 w-full">
               <div className="border-t border-primary py-4 flex gap-7">
-                <div className="bg-gray-500 aspect-square w-30 rounded-lg"></div>
+                <Image
+                  alt=""
+                  src={drNickFrank}
+                  className="aspect-5/6 object-cover rounded-lg"
+                />
                 <h3 className="text-h3 font-bold mt-1">Dr. Nick Frank</h3>
               </div>
               <div className="border-t border-primary py-4 flex gap-7">
-                <div className="bg-gray-500 aspect-square w-30 rounded-lg"></div>
+                <Image
+                  alt=""
+                  src={drAprilSanchez}
+                  className="aspect-5/6 object-cover rounded-lg"
+                />
                 <h3 className="text-h3 font-bold mt-1">Dr. April Sanchez</h3>
               </div>
               <div className="border-t border-primary py-4 flex gap-7">
-                <div className="bg-gray-500 aspect-square w-30 rounded-lg"></div>
+                <Image
+                  alt=""
+                  src={drFalonBrown}
+                  className="aspect-5/6 object-cover rounded-lg"
+                />
                 <h3 className="text-h3 font-bold mt-1">Dr. Falon Brown</h3>
               </div>
               <div className="border-t border-primary py-4 flex gap-7">
-                <div className="bg-gray-500 aspect-square w-30 rounded-lg"></div>
+                <Image
+                  alt=""
+                  src={drJessicaWilson}
+                  className="aspect-5/6 object-cover rounded-lg"
+                />
                 <h3 className="text-h3 font-bold mt-1">Dr. Jessica Wilson</h3>
               </div>
             </div>
@@ -193,7 +312,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col md:flex-row">
+      <section className="flex flex-col md:flex-row bg-light">
         <div className="w-full pl-gutter py-section-default">
           <div className="ml-auto max-w-lg pr-16">
             <h2 className="text-h2 font-bold mb-8">Our Locations</h2>
@@ -228,6 +347,8 @@ export default function Home() {
           Map Here
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }
@@ -305,41 +426,3 @@ const locations = [
   },
 ];
 
-const footerLinks = [
-  {
-    title: "ABOUT BETSON",
-    links: [
-      "About Betson Dermatology",
-      "Dermatology Professionals",
-      "Dermatology Services",
-      "Dermatology Locations",
-      "Make an Appointment",
-    ],
-  },
-  {
-    title: "OUR SERVICES",
-    links: [
-      "Skin Cancer Screening",
-      "Skin Cancer Prevention",
-      "Skin Cancer Treatment",
-      "Acne Treatment",
-      "Mohs Surgery",
-      "Cosmetic Dermatology",
-    ],
-  },
-  {
-    title: "OUR PRACTICE",
-    links: [
-      "Our Story",
-      "Our Team",
-      "Blog",
-      "Careers",
-      "Patient Resources",
-      "Insurance",
-    ],
-  },
-  {
-    title: "CONTACT US",
-    links: ["Call: (123) 456-7890", "Email Us", "Locations", "Facebook"],
-  },
-];

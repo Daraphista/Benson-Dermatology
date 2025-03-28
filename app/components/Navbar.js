@@ -99,30 +99,8 @@ function MobileNavItem({ item }) {
 export default function Navbar() {
   return (
     <header className="text-dark">
-      {/* Banner */}
-      <div className="flex justify-center items-center gap-4 py-4 flex-wrap">
-        <Link
-          className="py-1 px-2 text-lg font-bold uppercase hover:text-[#68564b] transition-colors duration-300"
-          href="https://bensonderm.com/"
-        >
-          Benson derm
-        </Link>
-        <Link
-          className="py-1 px-2 text-lg font-bold uppercase hover:text-[#68564b] transition-colors duration-300"
-          href="https://qnaspa.com/"
-        >
-          QnA Cosmetic Surgery & Medical Spa
-        </Link>
-        <Link
-          className="py-1 px-2 text-lg font-bold uppercase text-primary hover:text-[#68564b] transition-colors duration-300"
-          href="https://qnaspa.com/specials"
-        >
-          QnA Specials
-        </Link>
-      </div>
-
       {/* Nav */}
-      <nav className="bg-white px-gutter">
+      <nav className="px-gutter">
         <div className="max-w-container-default mx-auto px-4">
           <div className="flex justify-between items-center py-8">
             <Link href="/" className="text-2xl font-bold">
@@ -130,7 +108,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex gap-4 items-center">
+            <div className="hidden lg:flex gap-2 items-center">
               {navigation.map((item, index) => {
                 if (item.items) {
                   return (
