@@ -205,6 +205,7 @@ export default function Footer() {
                 </p>
 
                 <Link href="https://eversite.com/">
+                  <span className="sr-only">eversite</span>
                   <svg
                     className="w-auto h-10 text-[#21CD9C] hover:text-[#1EA18E] transition duration-200 ease-in-out"
                     viewBox="0 0 184 49"

@@ -21,33 +21,54 @@ const navigation = [
     name: "Our Clinics",
     href: "#",
     items: [
-      { name: "About Us", href: "/about" },
-      { name: "Our Providers", href: "/providers" },
-      { name: "Our Staff", href: "/staff" },
+      { name: "About Us", href: "https://bensonderm.com/about" },
+      { name: "Our Providers", href: "https://bensonderm.com/providers" },
+      { name: "Our Staff", href: "https://bensonderm.com/staff" },
     ],
   },
   {
     name: "Services",
     href: "#",
     items: [
-      { name: "Spot & Mole Checks", href: "/spot-mole-checks" },
-      { name: "Skin Cancer Prevention", href: "/skin-cancer-prevention" },
-      { name: "Skin Cancer Treatment", href: "/skin-cancer-treatment" },
-      { name: "Skin Diseases", href: "/skin-diseases" },
-      { name: "Acne Treatments", href: "/acne-treatments" },
-      { name: "Nail Disorders", href: "/nail-disorders" },
-      { name: "Hair Disorders", href: "/hair-disorders" },
-      { name: "Mohs Surgery", href: "/mohs-surgery" },
-      { name: "Dermatological Surgery", href: "/dermatological-surgery" },
-      { name: "View All Services", href: "/dermatology-services" },
+      {
+        name: "Spot & Mole Checks",
+        href: "https://bensonderm.com/spot-mole-checks",
+      },
+      {
+        name: "Skin Cancer Prevention",
+        href: "https://bensonderm.com/skin-cancer-prevention",
+      },
+      {
+        name: "Skin Cancer Treatment",
+        href: "https://bensonderm.com/skin-cancer-treatment",
+      },
+      {
+        name: "Skin Diseases",
+        href: "https://bensonderm.com/skin-diseases",
+      },
+      {
+        name: "Acne Treatments",
+        href: "https://bensonderm.com/acne-treatments",
+      },
+      { name: "Nail Disorders", href: "https://bensonderm.com/nail-disorders" },
+      { name: "Hair Disorders", href: "https://bensonderm.com/hair-disorders" },
+      { name: "Mohs Surgery", href: "https://bensonderm.com/mohs-surgery" },
+      {
+        name: "Dermatological Surgery",
+        href: "https://bensonderm.com/dermatological-surgery",
+      },
+      {
+        name: "View All Services",
+        href: "https://bensonderm.com/dermatology-services",
+      },
     ],
   },
-  { name: "Blog", href: "/blog" },
+  { name: "Blog", href: "https://bensonderm.com/blog" },
   {
     name: "Patient Center",
     href: "#",
     items: [
-      { name: "Patient Center", href: "/patient-center" },
+      { name: "Patient Center", href: "https://bensonderm.com/patient-center" },
       {
         name: "Notice of Privacy Practice",
         href: "https://bensonderm.com/media/bensonderm.com/2148/Notice%20of%20Privacy%20Practices.pdf",
@@ -175,7 +196,10 @@ export default function Navbar() {
                 );
               })}
 
-              <Link href="/contact" className="button is-outline">
+              <Link
+                href="https://bensonderm.com/contact-us"
+                className="button is-outline"
+              >
                 Contact Us
               </Link>
             </div>

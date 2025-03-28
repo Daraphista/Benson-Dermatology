@@ -334,7 +334,7 @@ export default function Home() {
 
                   <div>
                     <Link
-                      className="uppercase text-primary hover:text-dark transition-colors duration-300 font-bold"
+                      className="uppercase text-[#922c3a] hover:text-dark transition-colors duration-300 font-bold"
                       href={`https://bensonderm.com/contact-us#email`}
                     >
                       contact
