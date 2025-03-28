@@ -25,6 +25,8 @@ import drAprilSanchez from "@/public/dr-april-sanchez.avif";
 import drFalonBrown from "@/public/dr-falon-brown.avif";
 import drJessicaWilson from "@/public/dr-jessica-wilson.avif";
 
+import map from "@/public/map.avif";
+
 import {
   Disclosure,
   DisclosureButton,
@@ -312,9 +314,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col md:flex-row bg-light">
-        <div className="w-full px-gutter md:pr-0 py-section-default">
-          <div className="mx-auto w-full max-w-section-default md:ml-auto md:mr-0 md:max-w-lg pr-16">
+      <section className="flex flex-col lg:flex-row bg-light">
+        <div className="flex-1 px-gutter lg:pr-0 py-section-default">
+          <div className="mx-auto w-full max-w-section-default lg:ml-auto lg:mr-0 lg:max-w-lg pr-16">
             <h2 className="text-h2 font-bold mb-8">Our Locations</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
               {locations.map((location, index) => (
@@ -343,9 +345,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="w-full bg-gray-300 aspect-square flex items-center justify-center">
-          Map Here
-        </div>
+        <Image
+          src={map}
+          className="flex-1 w-full max-h-64 lg:w-1/2 lg:h-full object-cover"
+          alt=""
+          unoptimized
+        />
       </section>
 
       <Footer />
